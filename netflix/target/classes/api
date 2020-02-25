@@ -1,0 +1,23 @@
+key='apikey' -> Se especifica la apikey del usuario
+a -> accion:
+	l -> ver lista de peliculas puntuadas
+	g -> ver lista de peliculas guardadas
+	s -> guardar pelicula
+		id = 'idPelicula' -> id de la pelicula que se guarda
+		p = 'puntuacion' -> puntuación de la pelicula
+
+ejemplos:
+Ver lista de pelis puntuadas:
+www.miproyecto/interfaz?key=1234&a=l
+Devuelve un Json 
+
+guardar pelicula:
+www.miproyecto/interfaz?key=1234&a=s&id=1234
+
+puntuar pelicula:
+www.miproyecto/interfaz?key=1234&a=s&id=1234&p=7.8
+
+Devuelven un código: (response.sendError("error message", 201);) 
+	201: recurso creado 
+	401: usuario no autorizado
+	409: acción no realizada 

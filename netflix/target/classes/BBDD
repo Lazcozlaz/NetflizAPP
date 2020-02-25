@@ -1,0 +1,15 @@
+DROP DATABASE IF EXISTS netflix;
+CREATE DATABASE netflix; 
+
+CREATE TABLE `usuario`(
+    `id_usuario` VARCHAR(30) NOT NULL PRIMARY KEY,
+    `contrasena` VARCHAR(200) NOT NULL,
+    `api` VARCHAR(50)
+) ENGINE = INNODB DEFAULT CHARSET = latin1; 
+    
+CREATE TABLE `lista`(
+    `id_usuario` varchar(50) NOT NULL REFERENCES usuario (api),
+    `id_pelicula` varchar(30) NOT NULL,
+    `puntuacion` INT(5) DEFAULT 0,
+    CONSTRAINT clave PRIMARY KEY (id_usuario, id_pelicula)
+    )ENGINE = INNODB DEFAULT CHARSET = latin1;
